@@ -1,0 +1,32 @@
+[
+  {
+    "filename": "luna.md",
+    "title": "Luna",
+    "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "species": "Gato",
+    "age": "6 meses",
+    "size": "Pequeño",
+    "status": "Disponible",
+    "description": "Luna es una gatita muy cariñosa y juguetona. Le encanta dormir al sol y perseguir juguetes de plumas. Ideal para un piso."
+  },
+  {
+    "filename": "max.md",
+    "title": "Max",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "species": "Perro",
+    "age": "5 años",
+    "size": "Grande",
+    "status": "Adoptado",
+    "description": "Max ha encontrado su hogar definitivo. ¡Gracias a todos!"
+  },
+  {
+    "filename": "toby.md",
+    "title": "Toby",
+    "image": "https://images.unsplash.com/photo-1591769225440-811ad7d6eca6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "species": "Perro",
+    "age": "2 años",
+    "size": "Mediano",
+    "status": "Urgente",
+    "description": "Toby es un perro lleno de energía y amor. Fue rescatado de una situación difícil pero no ha perdido la fe en los humanos. Necesita una familia activa."
+  }
+]
