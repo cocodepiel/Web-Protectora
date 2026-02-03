@@ -6,4 +6,4 @@ age: 1 mes
 size: Grande
 status: Disponible
 ---
-ruced e 
+cruce de mastin
