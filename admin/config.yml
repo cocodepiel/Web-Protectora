@@ -1,14 +1,17 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master # ¡Importante! Cambiado de main a master
+  commit_messages:
+    create: "Añadido nuevo Valiente: {{slug}}"
+    update: "Actualizada ficha de {{slug}}"
+    delete: "Eliminado {{slug}}"
 
+publish_mode: simple
+display_url: https://sospatitasilicitanas.netlify.app
 local_backend: false
 
 media_folder: "assets"
 public_folder: "/assets"
-
-site_url: "https://sospatitasilicitanas.netlify.app"
-display_url: "SOS Patitas Ilicitanas"
 
 collections:
   - name: "animales"
@@ -16,7 +19,7 @@ collections:
     label_singular: "Valiente"
     folder: "content/animales"
     create: true
-    description: "Añade o edita a los animales que buscan hogar. ¡Recuerda marcar como 'Urgente' los casos graves!"
+    format: "frontmatter" # Asegura que el formato sea limpio
     slug: "{{slug}}"
     fields:
       - {label: "Nombre", name: "title", widget: "string"}
@@ -25,4 +28,4 @@ collections:
       - {label: "Edad", name: "age", widget: "string"}
       - {label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"]}
       - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Urgente", "Reservado", "Adoptado"]}
-      - {label: "Descripción", name: "body", widget: "markdown"}
+      - {label: "Descripción", name: "body", widget: "markdown", minimal: true}
