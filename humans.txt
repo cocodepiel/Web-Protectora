@@ -1,0 +1,11 @@
+/* TEAM */
+  Developer: Alicia Ros
+  Contact: alicia@example.com
+  Twitter: @aliciaros_dev
+  Location: Elche, Alicante
+
+/* SITE */
+  Last update: 2026/02/02
+  Standards: HTML5, CSS3
+  Components: Tailwind CSS
+  Software: Decap CMS, Vanilla JS

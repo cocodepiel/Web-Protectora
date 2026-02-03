@@ -1,0 +1,27 @@
+  name: git-gateway
+  branch: main
+  site_url: "https://sospatitasilicitanas.es"
+  display_url: "SOS Patitas Ilicitanas"
+  logo_url: "https://sospatitasilicitanas.es/assets/logo.png"
+
+local_backend: true
+
+media_folder: "content/uploads"
+public_folder: "/content/uploads"
+
+collections:
+  - name: "animales"
+    label: "Gestionar Valientes"
+    label_singular: "Valiente"
+    folder: "content/animales"
+    create: true
+    description: "Añade o edita a los animales que buscan hogar. ¡Recuerda marcar como 'Urgente' los casos graves!"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Foto", name: "image", widget: "image"}
+      - {label: "Especie", name: "species", widget: "select", options: ["Perro", "Gato", "Otro"]}
+      - {label: "Edad", name: "age", widget: "string"}
+      - {label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"]}
+      - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Urgente", "Reservado", "Adoptado"]}
+      - {label: "Descripción", name: "body", widget: "markdown"}
