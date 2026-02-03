@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # ¡Importante! Cambiado de main a master
+  branch: master
   commit_messages:
     create: "Añadido nuevo Valiente: {{slug}}"
     update: "Actualizada ficha de {{slug}}"
@@ -9,6 +9,10 @@ backend:
 publish_mode: simple
 display_url: https://sospatitasilicitanas.netlify.app
 local_backend: false
+
+# Esta sección desactiva la vista previa que causa los saltos de letras
+editor:
+  preview: false
 
 media_folder: "assets"
 public_folder: "/assets"
@@ -19,7 +23,7 @@ collections:
     label_singular: "Valiente"
     folder: "content/animales"
     create: true
-    format: "frontmatter" # Asegura que el formato sea limpio
+    format: "frontmatter"
     slug: "{{slug}}"
     fields:
       - {label: "Nombre", name: "title", widget: "string"}
@@ -28,4 +32,4 @@ collections:
       - {label: "Edad", name: "age", widget: "string"}
       - {label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"]}
       - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Urgente", "Reservado", "Adoptado"]}
-      - {label: "Descripción", name: "body", widget: "markdown", minimal: true}
+      - {label: "Descripción", name: "body", widget: "text"}
