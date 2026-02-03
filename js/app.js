@@ -64,7 +64,31 @@ function parseFrontMatter(text) {
         }
     });
 
+    // Normalize image path to always point to /assets/
+    if (metadata.image) {
+        metadata.image = normalizeImagePath(metadata.image);
+    }
+
     return { ...metadata, description: body, body }; // Include both for compatibility
+}
+
+// Helper: Normalize image path to ensure it always looks in /assets/
+function normalizeImagePath(imagePath) {
+    // If it's already a full URL, use as-is
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+        return imagePath;
+    }
+
+    // Remove leading slash if present
+    let cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+
+    // If it already starts with 'assets/', just ensure leading slash
+    if (cleanPath.startsWith('assets/')) {
+        return '/' + cleanPath;
+    }
+
+    // Otherwise, prepend /assets/
+    return '/assets/' + cleanPath;
 }
 
 // Render Function
