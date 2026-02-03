@@ -1,9 +1,9 @@
 ---
-title: Jackie Chan
+title: coco
 image: /assets/jack.jpeg
 species: Perro
-age: 1 mes
-size: Grande
-status: Disponible
+age: 3 meses
+size: Pequeño
+status: Urgente
 ---
-cruce de mastin
+ccwerrwer
