@@ -10,12 +10,12 @@ publish_mode: simple
 display_url: https://sospatitasilicitanas.netlify.app
 local_backend: false
 
-# Esta sección desactiva la vista previa que causa los saltos de letras
+# Esto evita que el texto salte mientras escribes
 editor:
   preview: false
 
 media_folder: "assets"
-public_folder: ""
+public_folder: "assets" # Lo dejamos sin la barra inicial para evitar la doble ruta
 
 collections:
   - name: "animales"
