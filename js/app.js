@@ -18,7 +18,7 @@ let allAnimals = [];
 async function loadAnimals() {
     try {
         // Fetch list of files from GitHub repository
-        const response = await fetch('https://api.github.com/repos/ros13ali/Web-Protectora/contents/content/animales');
+        const response = await fetch('https://api.github.com/repos/cocodepiel/Web-Protectora/contents/content/animales');
         if (!response.ok) throw new Error('Failed to load animals from GitHub API');
 
         const files = await response.json();
