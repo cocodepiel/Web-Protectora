@@ -72,23 +72,29 @@ function parseFrontMatter(text) {
     return { ...metadata, description: body, body }; // Include both for compatibility
 }
 
-// Helper: Normalize image path to ensure it always looks in /assets/
+// Helper: Normalize image path to ALWAYS point to /assets/
+// Uses the image property directly from frontmatter (NOT the animal name)
+const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80';
+
 function normalizeImagePath(imagePath) {
-    // If it's already a full URL, use as-is
+    // If no image provided, use default
+    if (!imagePath || imagePath.trim() === '') {
+        return DEFAULT_IMAGE;
+    }
+
+    // If it's already a full URL (external image), use as-is
     if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
         return imagePath;
     }
 
-    // Remove leading slash if present
-    let cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-
-    // If it already starts with 'assets/', just ensure leading slash
-    if (cleanPath.startsWith('assets/')) {
-        return '/' + cleanPath;
+    // Extract just the filename (remove any path prefixes like /assets/ or assets/)
+    let filename = imagePath;
+    if (filename.includes('/')) {
+        filename = filename.split('/').pop();
     }
 
-    // Otherwise, prepend /assets/
-    return '/assets/' + cleanPath;
+    // ALWAYS concatenate /assets/ + filename
+    return '/assets/' + filename;
 }
 
 // Render Function

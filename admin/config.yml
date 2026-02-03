@@ -15,7 +15,7 @@ editor:
   preview: false
 
 media_folder: "assets"
-public_folder: "/assets"
+public_folder: ""
 
 collections:
   - name: "animales"
