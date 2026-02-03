@@ -25,4 +25,4 @@ collections:
       - {label: "Edad", name: "age", widget: "string"}
       - {label: "Tamaño", name: "size", widget: "select", options: ["Pequeño", "Mediano", "Grande"]}
       - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Urgente", "Reservado", "Adoptado"]}
-      - {label: "Descripción", name: "body", widget: "markdown"}
+      - {label: "Descripción", name: "body", widget: "markdown"}   
