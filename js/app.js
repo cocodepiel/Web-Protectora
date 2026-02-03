@@ -77,24 +77,23 @@ function parseFrontMatter(text) {
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80';
 
 function normalizeImagePath(imagePath) {
-    // If no image provided, use default
+    // 1. Si no hay imagen, foto por defecto
     if (!imagePath || imagePath.trim() === '') {
         return DEFAULT_IMAGE;
     }
 
-    // If it's already a full URL (external image), use as-is
+    // 2. Si es una URL de internet, se deja como está
     if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
         return imagePath;
     }
 
-    // Extract just the filename (remove any path prefixes like /assets/ or assets/)
-    let filename = imagePath;
-    if (filename.includes('/')) {
-        filename = filename.split('/').pop();
-    }
-
-    // ALWAYS concatenate /assets/ + filename
-    return '/assets/' + filename;
+    // 3. LIMPIEZA TOTAL: 
+    // Quitamos cualquier rastro de "/assets/" o "assets/" que pueda venir del CMS
+    let filename = imagePath.replace(/^\/?assets\//, ''); 
+    
+    // 4. RECONSTRUCCIÓN:
+    // Forzamos que siempre empiece por /assets/ seguido del nombre limpio
+    return `/assets/${filename}`;
 }
 
 // Render Function
