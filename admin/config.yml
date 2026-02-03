@@ -1,13 +1,14 @@
+backend:
   name: git-gateway
   branch: main
-  site_url: "https://sospatitasilicitanas.es"
-  display_url: "SOS Patitas Ilicitanas"
-  logo_url: "https://sospatitasilicitanas.es/assets/logo.png"
 
-local_backend: true
+local_backend: false
 
-media_folder: "content/uploads"
-public_folder: "/content/uploads"
+media_folder: "assets"
+public_folder: "/assets"
+
+site_url: "https://sospatitasilicitanas.netlify.app"
+display_url: "SOS Patitas Ilicitanas"
 
 collections:
   - name: "animales"
